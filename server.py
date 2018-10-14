@@ -9,4 +9,5 @@ def ola():
     return "<h1> Olá Servidor python </h1>"
 
 
-server.run(debug=True)
+if __name__ == "__main__":
+    server.run()
