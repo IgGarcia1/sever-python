@@ -40,14 +40,12 @@ class ExecuteCode():
         f.close()
         
     def runCode(self, code, p, i):
-        print = p 
-        input = i 
         try:
-            exec(code)
+            exec(code, {"print": p, "input": i})
         except Exception as e:
             try:from ExecucaoException import ExecucaoException
             except: from corretor.ExecucaoException import ExecucaoException
-            raise ExecucaoException()
+            raise e
 
     def __init__(self, entradas, code, userActive):
         self.__entradas = entradas

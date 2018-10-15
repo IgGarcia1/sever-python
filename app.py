@@ -23,9 +23,9 @@ def main():
 
     try:
         c = Controller(entradas, codigo, user)  
-    except:
+    except Exception as e:
         deleteFiles( str(user)+'.txt',str(user)+'.json')
-        return "Error"
+        return str(e)
     else:
         nameJson = ConversorJson(user, append=True).returnFileJson()
 

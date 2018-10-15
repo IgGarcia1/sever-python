@@ -38,9 +38,8 @@ class Controller():
         #elif entradasLength == 0:
         try:
             Subcontroler(firstEnter, self.getCode(), 1, self.getUser(), last=semEntradas)
-        except:
-            raise ExecucaoException()
-        
+        except Exception as e:
+            raise e
 
         for x in range (1,entradasLength):
             if x == entradasLength-1:

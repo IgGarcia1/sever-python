@@ -21,8 +21,8 @@ class Subcontroler():
         self.__conversor = ConversorJson(str(userID), appendFile)
         try:
             self.__runner = ExecuteCode(self.getEnters(), self.getCode(), self.getUser())
-        except:
-            raise ExecucaoException()
+        except Exception as e:
+            raise e
        
 
         self.main(last)
